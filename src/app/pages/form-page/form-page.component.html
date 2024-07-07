@@ -1,0 +1,10 @@
+<button *ngIf="!formArray.disabled" (click)="submitAll()">Submit all forms</button>
+<button *ngIf="formArray.disabled" (click)="cancelSubmit()">Cancel</button>
+<div *ngIf="formArray.disabled">Time left: {{timeLeftCounter}}</div>
+
+<form class="card-deck">
+  <app-form-card *ngFor="let _ of formArray.controls; let i = index" class="card"
+    [formGroup]="getFormGroup(i)"></app-form-card>
+</form>
+
+<button [disabled]="formArray.disabled" (click)="addForm()">+ Add Form</button>

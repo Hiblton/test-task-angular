@@ -1,14 +1,20 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {AppComponent} from './app.component';
-import {RouterOutlet} from "@angular/router";
-import {HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi} from "@angular/common/http";
-import {MockBackendInterceptor} from "./shared/mock-backend/mock-backend.interceptor";
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+import { RouterOutlet } from "@angular/router";
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
+import { MockBackendInterceptor } from "./shared/mock-backend/mock-backend.interceptor";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormCardComponent } from './components/form-card/form-card.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormPageComponent } from './pages/form-page/form-page.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, FormCardComponent, FormPageComponent],
   imports: [
+    AppRoutingModule,
+    ReactiveFormsModule,
     BrowserModule,
     RouterOutlet,
     NgbModule
