@@ -1,10 +1,17 @@
-<button *ngIf="!formArray.disabled" (click)="submitAll()">Submit all forms</button>
-<button *ngIf="formArray.disabled" (click)="cancelSubmit()">Cancel</button>
-<div *ngIf="formArray.disabled">Time left: {{timeLeftCounter}}</div>
+<div class="d-flex align-items-center mb-3">
+  <button *ngIf="!formArray.disabled" class="btn btn-primary" (click)="submitAll()">Submit all forms</button>
+  <button *ngIf="formArray.disabled" class="btn btn-danger" (click)="cancelSubmit()">Cancel</button>
+  <div *ngIf="formArray.disabled" class="ml-3">{{timeLeftCounterSubject$ | async | formatTime}}</div>
+</div>
 
 <form class="card-deck">
-  <app-form-card *ngFor="let _ of formArray.controls; let i = index" class="card"
+  <app-form-card *ngFor="let _ of formArray.controls; let i = index" class="card mb-3"
     [formGroup]="getFormGroup(i)"></app-form-card>
-</form>
 
-<button [disabled]="formArray.disabled" (click)="addForm()">+ Add Form</button>
+  <button class="btn btn-outline-primary custom-add-form-button mb-3" type="button" [disabled]="formArray.disabled"
+    (click)="addForm()">
+    <div class="card custom-add-form-card">
+      <i class="bi bi-plus-lg"></i>
+    </div>
+  </button>
+</form>

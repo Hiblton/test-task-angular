@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
-import { FormPageComponent, TIMER_COUNTDOWN } from './form-page.component';
+import { FormPageComponent, COUNTDOWN_DURATION } from './form-page.component';
 import { FormBuilder, ReactiveFormsModule, FormGroup, Validators, FormArray } from '@angular/forms';
 import { of } from 'rxjs';
 import { ApiService } from '../../services/api.service';
@@ -72,7 +72,7 @@ describe('FormPageComponent', () => {
         component.formArray = new FormArray([createValidFormGroup()]);
         component.submitAll();
 
-        tick(1000 * TIMER_COUNTDOWN);
+        tick(1000 * COUNTDOWN_DURATION);
         tick(1000); // Extra tick to call finalSubmit
         expect(component.formArray.disabled).toBeTrue();
         expect(component.finalSubmit).toHaveBeenCalledWith(component.formArray.value);
@@ -88,7 +88,6 @@ describe('FormPageComponent', () => {
         component.cancelSubmit();
 
         expect(component.formArray.enabled).toBeTrue();
-        expect(component.timeLeftCounter).toBeGreaterThan(0);
         expect(component.finalSubmit).not.toHaveBeenCalled();
     }));
 

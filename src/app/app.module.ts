@@ -9,9 +9,11 @@ import { FormCardComponent } from './components/form-card/form-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormPageComponent } from './pages/form-page/form-page.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ValidationTooltipDirective } from './directives/validation-tooltip.directive';
+import { FormatTimePipe } from './pipes/format-time.pipe';
 
 @NgModule({
-  declarations: [AppComponent, FormCardComponent, FormPageComponent],
+  declarations: [AppComponent, FormCardComponent, FormPageComponent, ValidationTooltipDirective, FormatTimePipe],
   imports: [
     AppRoutingModule,
     ReactiveFormsModule,

@@ -1,26 +1,19 @@
 <div [formGroup]="formGroup" class="container mt-3">
-  <div class="mb-3">
+  <div class="mb-3 position-relative">
     <label for="country" class="form-label">Country</label>
-    <input id="country" formControlName="country" class="form-control" placeholder="Country" list="countries" />
+    <input id="country" formControlName="country" class="form-control" placeholder="Country" list="countries"
+      appValidationTooltip />
     <datalist id="countries">
       <option *ngFor="let country of countries" [value]="country"></option>
     </datalist>
-    <div *ngIf="formGroup.get('country')?.errors" class="text-danger">
-      <small>{{ getErrorMessage('country') }}</small>
-    </div>
   </div>
-  <div class="mb-3">
+  <div class="mb-3 position-relative">
     <label for="username" class="form-label">Username</label>
-    <input id="username" formControlName="username" class="form-control" placeholder="Username" />
-    <div *ngIf="formGroup.get('username')?.errors" class="text-danger">
-      <small>{{ getErrorMessage('username') }}</small>
-    </div>
+    <input id="username" formControlName="username" class="form-control" placeholder="Username" appValidationTooltip />
   </div>
-  <div class="mb-3">
+  <div class="mb-3 position-relative">
     <label for="birthday" class="form-label">Birthday</label>
-    <input id="birthday" formControlName="birthday" type="date" class="form-control" />
-    <div *ngIf="formGroup.get('birthday')?.errors" class="text-danger">
-      <small>{{ getErrorMessage('birthday') }}</small>
-    </div>
+    <input id="birthday" formControlName="birthday" type="date" class="form-control" placeholder="Birthday"
+      appValidationTooltip />
   </div>
 </div>
