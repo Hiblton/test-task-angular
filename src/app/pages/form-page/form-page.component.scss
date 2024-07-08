@@ -1,0 +1,33 @@
+:host {
+    .card {
+        max-width: 300px;
+        min-width: 300px;
+    }
+
+    .custom-add-form-button {
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0 15px;
+    }
+
+    .custom-add-form-card {
+        align-items: center;
+        border: 1px dashed #6c757d;
+        border-radius: 8px;
+        display: flex;
+        height: 300px;
+        justify-content: center;
+        margin: 0;
+        width: 300px;
+
+        &:hover {
+            border-color: #007bff;
+        }
+
+        .bi {
+            color: #007bff;
+            font-size: 3rem;
+        }
+    }
+}
