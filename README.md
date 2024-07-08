@@ -16,6 +16,7 @@ submission
 
 ## Notes (for real projects)
 
+- Some user controls (inputs) can be replaced with ng-bootstrap components (NgbDatepicker and NgbTypeahead).
 - All string values, such as FormControl names and validation error names, should be stored and managed in one place (constants, enums, or a configuration file).
 - The responsive layout can be improved.
 - Accessibility (A11Y) can be enhanced by setting appropriate attributes.
